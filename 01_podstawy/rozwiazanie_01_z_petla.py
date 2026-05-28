@@ -55,6 +55,13 @@ pr_4 = {
     "waga": 0.75
 }
 
+pr_5 = {
+    "nazwa": "Ogorki",
+    "cena": 8.1,
+    "waga": 0.75
+}
+
+produkty = [pr_1, pr_2, pr_3, pr_4, pr_5]
 
 def policz_naleznosc(produkt):
     cena = produkt["cena"]
@@ -70,25 +77,22 @@ def utworz_linie(produkt):
     naleznosc = policz_naleznosc(produkt)
     return f'{nazwa:25} {waga:.2f} kg x {cena:5.2f} zł = {naleznosc:5.2f} zł'
 
+suma = 0
+for p in produkty:
+    suma += policz_naleznosc(p)
 
-n1 = policz_naleznosc(pr_1)
-n2 = policz_naleznosc(pr_2)
-n3 = policz_naleznosc(pr_3)
-n4 = policz_naleznosc(pr_4)
+linie = []  # append
 
 linia_1 = utworz_linie(pr_1)
 linia_2 = utworz_linie(pr_2)
 linia_3 = utworz_linie(pr_3)
 linia_4 = utworz_linie(pr_4)
 
-suma = n1 + n2 + n3 + n4
+
 
 raport = f"""
 ============ PARAGON ============
-{linia_1}
-{linia_2}
-{linia_3}
-{linia_4}
+{"\n".join(linie)}
 ---------------------------------
 SUMA:{suma:>47.2f} zł
 =================================
