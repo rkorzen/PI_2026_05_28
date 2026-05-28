@@ -31,41 +31,56 @@ SUMA:                               45.48 zł
 =================================
 """
 
-nazwa_1 = "Ser żółty"
-cena_1 = 32.50
-waga_1 = 0.45
-naleznosc_1 = cena_1 * waga_1
+pr_1 = dict(
+    nazwa = "Ser żółty",
+    cena = 32.50,
+    waga = 0.45,
+)
 
-nazwy = ("Ser żółty", "Szynka", "Chleb", "Pomidory")
-ceny = (32.5, 41.9, 5.99, 8.40)
-wagi = (0.45, 0.30, 2.0, 0.75)
+pr_2 = dict(
+    nazwa = "Szynka",
+    cena = 41.9,
+    waga = 0.3,
+)
+
+pr_3 = dict(
+    nazwa = "Chleb",
+    cena = 5.99,
+    waga = 2,
+)
+
+pr_4 = {
+    "nazwa": "Pomidory",
+    "cena": 8.4,
+    "waga": 0.75
+}
+
+def policz_naleznosc(produkt):
+    cena = produkt["cena"]
+    waga = produkt["waga"]
+    naleznosc = cena * waga
+    return naleznosc
 
 
-pr_1 = ("Ser żółty", 32.50, 0.45, 32.50 * 0.45)
-
-nazwa_2 = "Szynka"
-cena_2 = 41.9
-waga_2 = 0.3
-naleznosc_2 = cena_2 * waga_2
-
-nazwa_3 = "Chleb"
-cena_3 = 5.99
-waga_3 = 2
-naleznosc_3 = cena_3 * waga_3
+def utworz_linie(produkt):
+    nazwa = produkt["nazwa"]
+    cena = produkt["cena"]
+    waga = produkt["waga"]
+    naleznosc = policz_naleznosc(produkt)
+    return f'{nazwa:25} {waga:.2f} kg x {cena:5.2f} zł = {naleznosc:5.2f} zł'
 
 
-nazwa_4 = "Pomidory"
-cena_4 = 8.4
-waga_4 = 0.75
-naleznosc_4 = cena_4 * waga_4
+n1 = policz_naleznosc(pr_1)
+n2 = policz_naleznosc(pr_2)
+n3 = policz_naleznosc(pr_3)
+n4 = policz_naleznosc(pr_4)
 
+linia_1 = utworz_linie(pr_1)
+linia_2 = utworz_linie(pr_2)
+linia_3 = utworz_linie(pr_3)
+linia_4 = utworz_linie(pr_4)
 
-linia_1 = f"{pr_1[0]:25} {pr_1[2]:.2f} kg x {pr_1[1]:5.2f} zł = {pr_1[3]:5.2f} zł"
-linia_2 = f"{nazwy[1]:25} {wagi[1]:.2f} kg x {ceny[1]:5.2f} zł = {wagi[1]*ceny[1]:5.2f} zł"
-linia_3 = f"{nazwa_3:25} {waga_3:.2f} kg x {cena_3:5.2f} zł = {naleznosc_3:5.2f} zł"
-linia_4 = f"{nazwa_4:25} {waga_4:.2f} kg x {cena_4:5.2f} zł = {naleznosc_4:5.2f} zł"
-
-suma = naleznosc_1 + naleznosc_2 + naleznosc_3 + naleznosc_4
+suma = n1 + n2 + n3 + n4
 
 raport = f"""
 ============ PARAGON ============
