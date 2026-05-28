@@ -82,13 +82,8 @@ for p in produkty:
     suma += policz_naleznosc(p)
 
 linie = []  # append
-
-linia_1 = utworz_linie(pr_1)
-linia_2 = utworz_linie(pr_2)
-linia_3 = utworz_linie(pr_3)
-linia_4 = utworz_linie(pr_4)
-
-
+for p in produkty:
+    linie.append(utworz_linie(p))
 
 raport = f"""
 ============ PARAGON ============
