@@ -1,2 +1,8 @@
 requests
 pandas==3.0.3
+pyinstaller
+openpyxl
+jupyter
+matplotlib
+beautifulsoup4
+
