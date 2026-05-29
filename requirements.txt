@@ -1,0 +1,2 @@
+requests
+pandas==3.0.3
