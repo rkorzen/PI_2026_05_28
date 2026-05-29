@@ -20,3 +20,12 @@ else:
     print("Jestes za mlody")
 
 
+# uogolnipne wartosci logiczne
+"""
+0 -> False
+[], None, "", {},
+if 0:
+
+1 ->
+
+"""

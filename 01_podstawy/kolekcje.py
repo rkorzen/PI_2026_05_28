@@ -204,4 +204,24 @@ for produkt in testowe_dane:
 
 
 
-produkt_1 -> produkt, 1
+# produkt_1 -> produkt, 1
+
+
+dane = {
+    "A": 10
+}
+
+print(dane["A"])
+
+# x = None
+# try:
+#     x = dane["B"]
+# except KeyError:
+#     pass
+
+if "B" in dane:
+    x = dane["B"]
+else:
+    x = None
+
+x = dane.get("B")

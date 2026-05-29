@@ -1,22 +1,5 @@
 """
-Stworz kalkulator
-
-musisz stworzyc kilka funkcji
-
-add, sub, mul, div,
-
-get_data - pobiera dane od uzytkownika
-
-main - ta funkcja spina w calosc. podejmuje decyzje jaka funkcje arytmetyczna wywolac na podstawie tego
-co zwroci get_data
-
-$ - tzn uruchamiamy w command line
-
-$ python kalkulator.py
-Podaj rodzaj operacji (+-/*): +
-Podaj arg a: 10
-Podaj arg b: 5
-Wynik a + b = 15
+przerob to tak, by skorzystac ze slownika zamiast z ifow w main
 
 """
 OPERATIONS = "+-/*"
