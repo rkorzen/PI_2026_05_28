@@ -1,8 +1,11 @@
-
-
-x = [1, 2, 3]
-type(x) == list
-isinstance(x, list)
+def splaszcz(lista):
+    result = []
+    for el in lista:
+        if isinstance(el, list):
+            result.extend(splaszcz(el))
+        else:
+            result.append(el)
+    return result
 
 
 
